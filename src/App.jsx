@@ -22,9 +22,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className={currentMode === 'Dark' ? 'dark' : ''}>
+    <div className={currentMode === 'Dark' ? 'dark' : ''} >
       <BrowserRouter>
-        <div className="flex relative dark:bg-main-dark-bg">
+        <div className="flex bg-page-pattern relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
               content="Settings"
@@ -53,11 +53,11 @@ const App = () => {
           <div
             className={
               activeMenu
-                ? 'dark:bg-main-dark-bg bg-main-bg border-b min-h-screen md:ml-72 w-full  '
+                ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-72 w-full  '
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
-            <div className="fixed md:static bg-nav-bg dark:bg-main-dark-bg navbar w-full ">
+            <div className="fixed md:static bg-white-bg border-b shadow dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
             <div>
