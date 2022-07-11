@@ -42,7 +42,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
+            <div className="w-72 fixed sidebar bg-opacity-70 dark:bg-secondary-dark-bg bg-white ">
               <Sidebar />
             </div>
           ) : (
@@ -57,7 +57,7 @@ const App = () => {
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
-            <div className="fixed md:static bg-white-bg border-b shadow dark:bg-main-dark-bg navbar w-full ">
+            <div className="fixed md:static bg-white border-b shadow-sm dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
             <div>
