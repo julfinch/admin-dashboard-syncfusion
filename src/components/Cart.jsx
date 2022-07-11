@@ -25,12 +25,11 @@ const Cart = () => {
       <div className="p-4 ml-4">
         {cartData.map((item, index) => (
           <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
-            <button
-              type="button"
-              className=" text-xl rounded-lg p-3 hover:bg-light-gray"
-            >
-              {item.image}
-            </button>
+            <img
+              src={item.image}
+              alt="cart item image"
+              className="rounded-lg"
+            />
 
             <div>
               <p className="font-semibold dark:text-gray-200 ">{item.name}</p>
