@@ -28,7 +28,7 @@ const Cart = () => {
             <img
               src={item.image}
               alt="cart item image"
-              className="rounded-lg"
+              className="rounded-lg h-14 w-14"
             />
 
             <div>
