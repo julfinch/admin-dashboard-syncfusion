@@ -22,7 +22,7 @@ const Cart = () => {
         />
       </div>
        
-      <div>
+      <div className="p-4 ml-4">
         {cartData.map((item, index) => (
           <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
             <button
@@ -41,11 +41,12 @@ const Cart = () => {
         ))}
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="p-4 ml-4">
+      <div className="flex justify-between items-center mt-5">
         <p className="text-gray-500 ">Sub Total</p>
         <p className="font-semibold ">$890</p>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-5">
         <p className="text-gray-500 ">Total</p>
         <p className="font-semibold ">$890</p>
       </div>
@@ -59,6 +60,8 @@ const Cart = () => {
           width="full"
         />
       </div>
+      </div>
+      
       </div>
     </div>
 
