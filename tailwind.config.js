@@ -43,7 +43,7 @@ module.exports = {
       backgroundImage: {
         'hero-pattern':
           "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
-        'page-pattern': "url('./src/assets/dark-pastel-7.svg')",
+        'page-pattern': "url('https://drive.google.com/uc?id=1NbYxxEhgvjjfwfSUN2oYAmiv7tsnNPkE')",
       },
     },
   },
