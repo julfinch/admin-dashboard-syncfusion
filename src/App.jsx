@@ -53,7 +53,7 @@ const App = () => {
           <div
             className={
               activeMenu
-                ? 'dark:bg-main-dark-bg bg-main-bg opacity-90 min-h-screen md:ml-72 w-full  '
+                ? 'dark:bg-main-dark-bg bg-main-bg opacity-30 min-h-screen md:ml-72 w-full  '
                 : 'bg-main-bg opacity-80 dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
