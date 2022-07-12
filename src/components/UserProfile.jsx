@@ -13,13 +13,14 @@ const UserProfile = () => {
     <div className="nav-item shadow absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
-        <Button
-          icon={<MdOutlineCancel />}
+        <button
           color="rgb(153, 171, 180)"
           bgHoverColor="light-gray"
           size="2xl"
           borderRadius="50%"
-        />
+        >
+          <MdOutlineCancel/>
+        </button>
       </div>
       <div className="flex gap-5 items-center mt-6 border-color border-b-1 pb-6">
         <img
