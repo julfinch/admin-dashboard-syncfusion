@@ -37,7 +37,8 @@ const Notification = () => {
           </div>
         ))}
       </div>
-      <div className="mt-5">
+
+      <div className="mt-5 w-full">
         <Button
           color="white"
           bgColor={currentColor}

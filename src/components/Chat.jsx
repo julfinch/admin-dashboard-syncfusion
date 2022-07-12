@@ -38,13 +38,13 @@ const Chat = () => {
           </div>
         ))}
       </div>
-      <div className="mt-5">
+      <div className="mt-5 w-full">
         <Button
           color="white"
           bgColor={currentColor}
           text="See all messages"
           borderRadius="10px"
-          width="fit"
+          width="full"
         />
       </div>
     </div>

@@ -50,13 +50,13 @@ const Cart = () => {
         <p className="font-semibold ">$890</p>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 w-full">
         <Button
           color="white"
           bgColor={currentColor}
           text="Place Order"
           borderRadius="10px"
-          width="max"
+          width="full"
         />
       </div>
       </div>
