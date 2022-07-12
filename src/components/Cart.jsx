@@ -56,7 +56,7 @@ const Cart = () => {
           bgColor={currentColor}
           text="Place Order"
           borderRadius="10px"
-          width="full"
+          width="max"
         />
       </div>
       </div>
