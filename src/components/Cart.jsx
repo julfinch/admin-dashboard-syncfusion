@@ -50,13 +50,13 @@ const Cart = () => {
         <p className="font-semibold ">$890</p>
       </div>
 
-      <div className="mt-5 w-fit flex justify-center items-center">
+      <div className="mt-5 w-full flex justify-center items-center">
         <Button
           color="white"
           bgColor={currentColor}
           text="Place Order"
           borderRadius="10px"
-          width="full"
+          width="fit"
         />
       </div>
       </div>
