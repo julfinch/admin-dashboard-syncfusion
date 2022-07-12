@@ -38,7 +38,7 @@ const Chat = () => {
           </div>
         ))}
       </div>
-      <div className="mt-5 w-max">
+      <div className="mt-5 w-max flex items-center">
         <Button
           color="white"
           bgColor={currentColor}

@@ -50,7 +50,7 @@ const Cart = () => {
         <p className="font-semibold ">$890</p>
       </div>
 
-      <div className="mt-5 w-fit">
+      <div className="mt-5 w-fit flex items-center">
         <Button
           color="white"
           bgColor={currentColor}
