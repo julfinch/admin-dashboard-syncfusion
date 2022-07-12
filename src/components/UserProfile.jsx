@@ -14,10 +14,11 @@ const UserProfile = () => {
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
         <button
+          type="button"
+          onClick={() => setIsClicked(initialState)}
           color="rgb(153, 171, 180)"
-          bgHoverColor="light-gray"
-          size="2xl"
           borderRadius="50%"
+          className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
         >
           <MdOutlineCancel/>
         </button>
