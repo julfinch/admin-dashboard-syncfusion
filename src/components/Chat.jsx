@@ -38,7 +38,7 @@ const Chat = () => {
           </div>
         ))}
       </div>
-      <div className="mt-5 w-full">
+      <div className="mt-5 w-max">
         <Button
           color="white"
           bgColor={currentColor}
