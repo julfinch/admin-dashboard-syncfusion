@@ -15,9 +15,8 @@ const UserProfile = () => {
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
         <button
           type="button"
-          onClick={() => setIsClicked(initialState)}
-          color="rgb(153, 171, 180)"
-          borderRadius="50%"
+          onClick={() => setIsClicked(false)}
+          style= {{color: "rgb(153, 171, 180)", borderRadius: "50%" }}
           className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
         >
           <MdOutlineCancel/>
