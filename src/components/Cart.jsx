@@ -6,7 +6,7 @@ import { cartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Cart = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, isClicked, setIsClicked } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
@@ -15,7 +15,7 @@ const Cart = () => {
         <p className="font-semibold text-lg dark:text-gray-200">Shopping Cart</p>
         <button
           type="button"
-          onClick={() => setIsClicked(false)}
+          onClick={() => setIsClicked(!isClicked)}
           style= {{color: "rgb(153, 171, 180)", borderRadius: "50%" }}
           className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
         >
