@@ -67,12 +67,25 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+      
+        <MenuButton customFunc={handleActiveMenu} color={currentColor} icon={activeMenu ? <RiArrowLeftLine/> : <AiOutlineMenu />} />
+          <div className="flex flex-row rounded-full p-1 bg-gray-200 dark:bg-main-dark-bg items-center justify-between">
+            <div className="flex flex-row items-center gap-2 group relative">
+              <svg width="20" height="20" fill="currentColor" className="ml-2 text-slate-400 pointer-events-none" aria-hidden="true">
+                <path fillRule="evenodd" clipRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+              </svg>
+              <input className="text-xs text-gray-600 bg-transparent focus:outline-none" placeholder="Search"/>
+            </div>
+            <div className="flex flex-row items-center p-2 justify-between text-white w-28 h-9 rounded-full" style={{ backgroundColor: currentColor }}>
+              <p className="text-xs">Categories</p>
+              <MdKeyboardArrowDown/>
+            </div>
+          </div>
 
-      <MenuButton customFunc={handleActiveMenu} color={currentColor} icon={activeMenu ? <RiArrowLeftLine/> : <AiOutlineMenu />} />
       <div className="flex">
         <NavButton title="Cart" customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
-        <NavButton title="Chat" dotColor="#03C9D7" customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft />} />
-        <NavButton title="Notification" dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} />
+        <NavButton title="Chat" dotColor={currentColor} customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft />} />
+        <NavButton title="Notification" dotColor={currentColor} customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
@@ -83,12 +96,6 @@ const Navbar = () => {
               src={avatar}
               alt="user-profile"
             />
-            <p>
-              <span className="text-gray-400 text-14">Hi,</span>{' '}
-              <span className="text-gray-400 font-bold ml-1 text-14">
-                Michael
-              </span>
-            </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>

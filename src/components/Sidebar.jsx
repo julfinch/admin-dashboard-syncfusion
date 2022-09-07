@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GiFinch } from 'react-icons/gi';
+import { FiLogOut} from 'react-icons/fi';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
+import avatar from '../data/avatar.jpg';
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -16,11 +17,11 @@ const Sidebar = () => {
     }
   };
 
-  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
+  const activeLink = 'flex items-center gap-5 pl-4 pt-2 pb-2 rounded-lg  text-white  text-md ';
+  const normalLink = 'flex items-center gap-5 pl-4 pt-2 pb-2 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray ';
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+    <div className="mx-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-1">
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
@@ -38,10 +39,31 @@ const Sidebar = () => {
               </button>
             </TooltipComponent>
           </div>
-          <div className="mt-10 ">
+          {/*Admin Profile Card */}
+          <div className="flex flex-col dark:text-gray-200 dark:bg-main-dark-bg shadow-md p-4 border dark:border-transparent rounded-md mt-1 mb-6 items-center justify-between">
+            <img
+              className="rounded-full w-16 h-16"
+              src={avatar}
+              alt="user-profile"
+            />
+            <p className="font-medium text-lg">Michael Roberts</p>
+            <p className="font-normal text-sm text-gray-600">Administrator</p>
+            <div className="mt-4 flex flex-row gap-3">
+              <div className="flex flex-col items-center gap-1">
+                <p className="text-gray-400 text-xs">Daily</p>
+                <p className="text-black dark:text-gray-200 text-sm font-semibold">$10,000</p>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <p className="text-gray-400 text-xs">Weekly</p>
+                <p className="text-black dark:text-gray-200 text-sm font-semibold">$50,000</p>
+              </div>
+            </div>
+          </div>
+          {/*Links */}
+          <div className="mt-2">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
+                <p className="hidden">
                   {item.title}
                 </p>
                 {item.links.map((link) => (
@@ -55,12 +77,12 @@ const Sidebar = () => {
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                   >
                     {link.icon}
-                    <span className="capitalize ">{link.name}</span>
+                    <span className="capitalize text-sm">{link.name}</span>
                   </NavLink>
                 ))}
               </div>
             ))}
-          </div>
+          </div>          
         </>
       )}
     </div>

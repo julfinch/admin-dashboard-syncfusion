@@ -1,11 +1,14 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
+import { AiOutlineCalendar } from 'react-icons/ai'
+import { HiDotsVertical,HiTrendingUp, HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
+import { BsArrowUp } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
+import { MdOpenInNew } from 'react-icons/md';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData, topSales, topCountries, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
 
@@ -19,8 +22,14 @@ const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
-    <div className="mt-24">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+    <div className="mt-4">
+      {/*Dashboard Header*/}
+        <div className="flex flex-row mx-4 mt-2 mb-2 justify-between">
+          <p className="font-bold dark:text-gray-400 text-xl">Dashboard</p>
+          <p className="text-xs text-gray-500 flex flex-row items-center gap-2"><AiOutlineCalendar/>Sep 12,2022 - Sep 21, 2022</p>
+        </div>
+      <div className="flex flex-wrap lg:flex-nowrap justify-between ">
+        {/* 
         <div className="bg-white shadow-sm dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
@@ -44,40 +53,49 @@ const Ecommerce = () => {
             />
           </div>
         </div>
-        <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+        */}
+        <div className="flex flex-wrap w-full mx-4 mb-3 justify-between gap-2 items-center">
           {earningData.map((item) => (
-            <div key={item.title} className="shadow-sm bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
-              <button
-                type="button"
-                style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
-                {item.icon}
-              </button>
-              <p className="mt-3">
-                <span className="text-lg font-semibold">{item.amount}</span>
-                <span className={`text-sm text-${item.pcColor} ml-2`}>
+            <div key={item.title} className="shadow-sm bg-white h-28 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-64  p-3 rounded-2xl ">
+              <div className="flex flex-row justify-between items-center">
+                <p className="text-sm text-gray-400 ">{item.title}</p>
+                <HiDotsVertical/>
+              </div>
+              <div className="flex flex-row items-center justify-between mt-3">
+                <div className="flex flex-row gap-2 items-center">
+                  <button
+                    type="button"
+                    style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+                    className="text-xl opacity-0.9 rounded-md  p-2 hover:drop-shadow-xl"
+                  >
+                    {item.icon}
+                  </button>
+                  <p className="text-lg font-semibold">{item.amount}</p>
+                </div>
+                <p className={`text-sm ${item.pcColor} ml-2 flex flex-row items-center gap-2`}>
+                  <MdOpenInNew/>
                   {item.percentage}
-                </span>
-              </p>
-              <p className="text-sm text-gray-400  mt-1">{item.title}</p>
+                </p>
+              </div>
+              <p className="text-xs text-gray-400 text-right mt-1">Compared to Jan 2022</p>
             </div>
           ))}
         </div>
       </div>
-
-      <div className="flex gap-10 flex-wrap justify-center">
-        <div className="shadow bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
-          <div className="flex justify-between">
-            <p className="font-semibold text-xl">Revenue Updates</p>
+      
+      {/*Main Chart*/}
+      <div className="flex gap-1 pl-3 flex-wrap justify-center">
+        <div className="shadow bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-4 rounded-2xl md:w-752 h-98">
+          <div className="flex justify-between border-b pb-2">
+            <p className="font-semibold text-sm">Revenue Updates</p>
             <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+              <p className="flex items-center text-xs gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
                 <span>Expense</span>
               </p>
-              <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
+              <p className="flex items-center text-xs gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
@@ -85,27 +103,27 @@ const Ecommerce = () => {
               </p>
             </div>
           </div>
-          <div className="mt-10 flex gap-10 flex-wrap justify-center">
+          <div className="mt-3 flex gap-2 flex-wrap justify-center">
             <div className=" border-r-1 border-color m-4 pr-10">
               <div>
                 <p>
-                  <span className="text-3xl font-semibold">$93,438</span>
+                  <span className="text-lg font-semibold">$93,438</span>
                   <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
                     23%
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-sm text-gray-500 mt-1">Budget</p>
               </div>
-              <div className="mt-8">
-                <p className="text-3xl font-semibold">$48,487</p>
+              <div className="mt-2">
+                <p className="text-lg font-semibold">$48,487</p>
 
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="text-sm text-gray-500 mt-1">Expense</p>
               </div>
 
               <div className="mt-5">
-                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
+                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="100px" width="250px" data={SparklineAreaData} color={currentColor} />
               </div>
-              <div className="mt-10">
+              <div className="mt-6">
                 <Button
                   color="white"
                   bgColor={currentColor}
@@ -115,39 +133,62 @@ const Ecommerce = () => {
               </div>
             </div>
             <div>
-              <Stacked currentMode={currentMode} width="320px" height="360px" />
+              <Stacked currentMode={currentMode} width="335px" height="330px" />
             </div>
           </div>
         </div>
-        <div>
-          <div
-            className="shadow rounded-2xl md:w-400 p-4 m-3"
-            style={{ backgroundColor: currentColor }}
-          >
-            <div className="flex justify-between items-center ">
-              <p className="font-semibold text-white text-2xl">Earnings</p>
+        {/*RIGHT BARS*/}
+        <div className='flex flex-col' style={{maxHeight: "32px"}}>
+          {/*1st Right Bar*/}
+          {topSales.map((item) => (
+          <div className="flex flex-col gap-1 dark:text-gray-200 dark:bg-secondary-dark-bg shadow rounded-2xl md:w-400 p-1 mx-2 mb-1 bg-white">
+            <div className="flex flex-row p-2 items-center justify-between">
+              <div className="flex flex-col gap-1">
+                <div className="flex flex-row gap-1">
+                  <div className="flex flex-row items-center">
+                    <button>
+                      <img
+                        className="rounded-full w-11 h-11 mr-4 hover:ring"
+                        src={item.image}
+                        alt="user-profile"
+                      />
+                    </button>
+                    <div className="flex flex-col">
+                      <p className="font-semibold text-base">{item.name}</p>
+                      <p className="text-xs text-gray-400 font-base">{item.title}</p>
+                    </div>
+                  </div>
+                </div>
 
-              <div>
-                <p className="text-2xl text-white font-semibold mt-8">$63,448.78</p>
-                <p className="text-gray-200">Monthly revenue</p>
+                <p className="text-gray-500 text-xs font-normal">{item.desc}</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <HiTrendingUp size={30} style={{color: 'green'}}/>
+                <p className="text-sm font-medium text-green-500">{item.amount}</p>
+                <p className="text-xs font-normal text-gray-500">Last 6 months</p>
               </div>
             </div>
-
-            <div className="mt-4">
-              <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
-            </div>
+          </div>
+          ))}
+          {/*2nd Right Bar*/}
+          <div className="shadow bg-white flex-col dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 mx-2 mt-2 flex px-4 py-2">
+            <p className="text-sm font-semibold mb-2  text-left">Top Countries</p>
+              {topCountries.map((item) => (
+                <div className='flex flex-row items-center justify-between text-sm gap-6 font-normal text-gray-500 '>
+                  <div className="flex flex-row items-center gap-2">
+                    <p className="">{item.rank}. {item.country}</p>
+                    <img
+                      className="rounded-full w-5 h-5 mr-4 hover:ring"
+                      src={item.image}
+                      alt="country flag"
+                    />
+                  </div>
+                  <p className="text-gray-400 flex flex-row gap-2 items-center">{item.amount}<BsArrowUp size={20} style={{color: 'green'}}/> <HiOutlineDotsCircleHorizontal size={25}/></p>
+                </div>
+              ))}
           </div>
 
-          <div className="shadow bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
-            <div>
-              <p className="text-2xl font-semibold ">$43,246</p>
-              <p className="text-gray-400">Yearly sales</p>
-            </div>
-
-            <div className="w-40">
-              <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
-            </div>
-          </div>
         </div>
       </div>
 
@@ -230,7 +271,7 @@ const Ecommerce = () => {
                   </div>
                 </div>
 
-                <p className={`text-${item.pcColor}`}>{item.amount}</p>
+                <p className={`${item.pcColor}`}>{item.amount}</p>
               </div>
             ))}
             <div className="mt-4">

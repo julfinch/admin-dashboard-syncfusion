@@ -1,8 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart, FiSettings } from 'react-icons/fi';
+import { BsKanban,BsChatDots, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { RiContactsFill } from 'react-icons/ri';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
@@ -22,6 +21,9 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
+import india from './india.jpg';
+import germany from './germany.jpg';
+import uk from './uk.jpg';
 
 export const gridOrderImage = (props) => (
   <div>
@@ -471,11 +473,15 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: 'Dashboard',
+    title: 'General',
     links: [
       {
         name: 'ecommerce',
         icon: <FiShoppingBag />,
+      },
+      {
+        name: 'messages',
+        icon: <BsChatDots />,
       },
     ],
   },
@@ -505,19 +511,20 @@ export const links = [
         icon: <AiOutlineCalendar />,
       },
       {
-        name: 'kanban',
+        name: 'tasks',
         icon: <BsKanban />,
       },
       {
-        name: 'editor',
+        name: 'notes',
         icon: <FiEdit />,
       },
       {
-        name: 'color-picker',
-        icon: <BiColorFill />,
+        name: 'settings',
+        icon: <FiSettings />,
       },
     ],
   },
+  /*
   {
     title: 'Charts',
     links: [
@@ -556,6 +563,7 @@ export const links = [
       },
     ],
   },
+  */
 ];
 
 export const cartData = [
@@ -621,7 +629,7 @@ export const earningData = [
     title: 'Customers',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
   },
   {
     icon: <BsBoxSeam />,
@@ -630,7 +638,7 @@ export const earningData = [
     title: 'Products',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
+    pcColor: 'text-green-600',
   },
   {
     icon: <FiBarChart />,
@@ -640,7 +648,7 @@ export const earningData = [
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
 
-    pcColor: 'green-600',
+    pcColor: 'text-green-600',
   },
   {
     icon: <HiOutlineRefresh />,
@@ -649,7 +657,52 @@ export const earningData = [
     title: 'Refunds',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
+  },
+];
+
+export const topSales = [
+  {
+    image: avatar2,
+    amount: '$300,490.00',
+    name: 'Esther Howard',
+    title: 'Sales Manager - USA',
+    desc: 'Top 1 in sales on all regions',
+  },
+  {
+    image: avatar3,
+    amount: '$202,823.00',
+    name: 'Robert Fox',
+    title: 'Sales Manager - Asia',
+    desc: 'Top 2 in sales on all regions',
+  },
+  {
+    image: avatar4,
+    amount: '$200,245.00',
+    name: 'Mike dela Hoya',
+    title: 'Sales Manager - Europe',
+    desc: 'Top 3 in sales on all regions',
+  },
+];
+
+export const topCountries = [
+  {
+    image: india,
+    amount: '$21,942.83',
+    country: 'India',
+    rank: '1',
+  },
+  {
+    image: germany,
+    amount: '$20,923.15',
+    country: 'Germany',
+    rank: '2',
+  },
+  {
+    image: uk,
+    amount: '$18,847.15',
+    country: 'United Kingdom',
+    rank: '3',
   },
 ];
 
@@ -711,7 +764,7 @@ export const weeklyStats = [
     title: 'Top Sales',
     desc: 'Johnathan Doe',
     iconBg: '#FB9678',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
   },
   {
     icon: <FiStar />,
@@ -719,7 +772,7 @@ export const weeklyStats = [
     title: 'Best Seller',
     desc: 'MaterialPro Admin',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
   },
   {
     icon: <BsChatLeft />,
@@ -727,7 +780,7 @@ export const weeklyStats = [
     title: 'Most Commented',
     desc: 'Ample Admin',
     iconBg: '#00C292',
-    pcColor: 'green-600',
+    pcColor: 'text-green-600',
   },
 ];
 
