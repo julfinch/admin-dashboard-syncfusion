@@ -1,4 +1,4 @@
-# Finch Admin Dashboard
+# FinchPro
   -Live Site URL: [https://finch-dashboard.netlify.app/](https://finch-dashboard.netlify.app/)
 
   -Admin dashboard react app that utilizes some of the great REACT UI components by Syncfusion. .
@@ -18,7 +18,10 @@
 
 ### Screenshot
 
-![](./_readme_img/admin_dashboard.png)
+![](./_readme_img/FinchPro-1-1.png)
+![](./_readme_img/FinchPro-1-2.png)
+![](./_readme_img/FinchPro-2-1.png)
+![](./_readme_img/FinchPro-2-2.png)
 
 ### Links
 
