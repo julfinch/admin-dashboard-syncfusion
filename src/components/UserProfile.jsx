@@ -59,6 +59,7 @@ const UserProfile = () => {
           text="Logout"
           borderRadius="10px"
           width="full"
+          padding="3"
         />
       </div>
     </div>

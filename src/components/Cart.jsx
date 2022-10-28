@@ -58,6 +58,7 @@ const Cart = () => {
           text="Place Order"
           borderRadius="10px"
           width="fit"
+          padding="3"
         />
       </div>
       </div>

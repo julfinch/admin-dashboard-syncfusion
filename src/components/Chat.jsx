@@ -46,6 +46,7 @@ const Chat = () => {
           text="See all messages"
           borderRadius="10px"
           width="full"
+          padding="3"
         />
       </div>
     </div>

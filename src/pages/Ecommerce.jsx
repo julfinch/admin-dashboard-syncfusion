@@ -4,6 +4,7 @@ import { HiDotsVertical,HiTrendingUp, HiOutlineDotsCircleHorizontal } from 'reac
 import { BsArrowUp } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { MdOpenInNew } from 'react-icons/md';
+import useWindowSize from "../hooks/useWindowSize";
 
 import { Stacked, Button, SparkLine } from '../components';
 import { earningData, topSales, topCountries, SparklineAreaData,} from '../data/dummy';
@@ -11,12 +12,13 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 
 const Ecommerce = () => {
+  const { width } = useWindowSize();
   const { currentColor, currentMode } = useStateContext();
 
   return (
     <div className="mt-4">
       {/*Dashboard Header*/}
-        <div className="flex flex-row mx-4 mt-2 mb-2 justify-between">
+        <div className="flex flex-row mx-4 mt-20 sm:mt-2 mb-2 justify-between">
           <p className="font-bold dark:text-gray-400 text-xl">Dashboard</p>
           <p className="text-xs text-gray-500 flex flex-row items-center gap-2"><AiOutlineCalendar/>Sep 12,2022 - Sep 21, 2022</p>
         </div>
@@ -24,7 +26,7 @@ const Ecommerce = () => {
         
         <div className="flex flex-wrap w-full mx-4 mb-3 justify-between gap-2 items-center">
           {earningData.map((item) => (
-            <div key={item.title} className="shadow-sm bg-white h-28 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-64  p-3 rounded-2xl ">
+            <div key={item.title} className="shadow-sm bg-white h-28 dark:text-gray-200 dark:bg-secondary-dark-bg mt-2 sm:mt-0 w-full lg:w-48 xl:w-64 p-3 rounded-2xl ">
               <div className="flex flex-row justify-between items-center">
                 <p className="text-sm text-gray-400 ">{item.title}</p>
                 <HiDotsVertical/>
@@ -53,7 +55,7 @@ const Ecommerce = () => {
       
       {/*Main Chart*/}
       <div className="flex gap-1 pl-3 flex-wrap justify-center">
-        <div className="shadow bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-4 rounded-2xl md:w-752 h-98">
+        <div className="shadow bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-4 rounded-2xl h-98" style={{width: `${ width > 1100 ? "706px" : "500px"}`}}>
           <div className="flex justify-between border-b pb-2">
             <p className="font-semibold text-sm">Revenue Updates</p>
             <div className="flex items-center gap-4">
@@ -71,8 +73,8 @@ const Ecommerce = () => {
               </p>
             </div>
           </div>
-          <div className="mt-3 flex gap-2 flex-wrap justify-center">
-            <div className=" border-r-1 border-color m-4 pr-10">
+          <div className="xl:mt-3 flex xl:gap-4 flex-wrap xl:justify-center">
+            <div className=" xl:border-r-1 border-color m-4 xl:pr-10">
               <div>
                 <p>
                   <span className="text-lg font-semibold">$93,438</span>
@@ -88,20 +90,22 @@ const Ecommerce = () => {
                 <p className="text-sm text-gray-500 mt-1">Expense</p>
               </div>
 
-              <div className="mt-5">
-                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="100px" width="250px" data={SparklineAreaData} color={currentColor} />
+              <div className="lg:-mt-28 xl:mt-5 lg:ml-40 xl:ml-0">
+                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="100px" width="250px" data={SparklineAreaData} color={currentColor} /> 
               </div>
-              <div className="mt-6">
+              <div className="lg:-mt-3 xl:mt-6 lg:ml-72 xl:ml-0">
                 <Button
                   color="white"
+                  size={`${ width > 1100 ? "" : "xs"}`}
                   bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
+                  padding={`${ width > 1100 ? "3" : "2"}`}
                 />
               </div>
             </div>
             <div>
-              <Stacked currentMode={currentMode} width="335px" height="330px" />
+              {width > 1100 ? <Stacked currentMode={currentMode} width="335px" height="330px"/> : <Stacked currentMode={currentMode} width="450px" height="230px"/>}
             </div>
           </div>
         </div>
@@ -109,7 +113,7 @@ const Ecommerce = () => {
         <div className='flex flex-col' style={{maxHeight: "32px"}}>
           {/*1st Right Bar*/}
           {topSales.map((item) => (
-          <div className="flex flex-col gap-1 dark:text-gray-200 dark:bg-secondary-dark-bg shadow rounded-2xl md:w-400 p-1 mx-2 mb-1 bg-white">
+          <div className="flex flex-col gap-1 dark:text-gray-200 dark:bg-secondary-dark-bg shadow rounded-2xl lg:w-80 xl:w-400 p-1 mx-2 lg:mb-2.5 xl:mb-1 bg-white">
             <div className="flex flex-row p-2 items-center justify-between">
               <div className="flex flex-col gap-1">
                 <div className="flex flex-row gap-1">
@@ -140,7 +144,7 @@ const Ecommerce = () => {
           </div>
           ))}
           {/*2nd Right Bar*/}
-          <div className="shadow bg-white flex-col dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 mx-2 mt-2 flex px-4 py-2">
+          <div className="shadow bg-white flex-col dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl lg:w-80 xl:w-400 mx-2 mt-2 flex px-4 py-2">
             <p className="text-sm font-semibold mb-2  text-left">Top Countries</p>
               {topCountries.map((item) => (
                 <div className='flex flex-row items-center justify-between text-sm gap-6 font-normal text-gray-500 '>

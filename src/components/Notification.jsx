@@ -46,6 +46,7 @@ const Notification = () => {
           text="See all notifications"
           borderRadius="10px"
           width="max"
+          padding="3"
         />
       </div>
     </div>

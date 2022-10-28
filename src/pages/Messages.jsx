@@ -15,7 +15,7 @@ const Messages = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
-    <div className="grid grid-cols-12 border-t dark:border-transparent" >
+    <div className="grid grid-cols-12 h-screen border-t dark:border-transparent" >
       {/*GRID 1*/}
       <div className="col-span-4 p-4 bg-gray-100  dark:text-gray-200 dark:bg-main-dark-bg">
         <div className="flex flex-col p-6 ">
@@ -40,11 +40,6 @@ const Messages = () => {
               <img
                 className="rounded-full w-10 h-10 ring hover:ring-blue-500 cursor-pointer"
                 src={avatar2}
-                alt="user-profile"
-              />
-              <img
-                className="rounded-full w-10 h-10 ring hover:ring-blue-500 cursor-pointer"
-                src={avatar4}
                 alt="user-profile"
               />
               <img
@@ -361,7 +356,7 @@ const Messages = () => {
                 <FiFileText/>
               </div>
               <div className="flex flex-col">
-                <p className="font-medium text-sm">Business Data.pdf</p>
+                <p className="font-medium text-sm">Sales.pdf</p>
                 <p className="text-left text-xs text-gray-400 font-base">1.8 Mb</p>
               </div>
             </div>
@@ -373,7 +368,7 @@ const Messages = () => {
                 <BsMusicNoteBeamed/>
               </div>
               <div className="flex flex-col">
-                <p className="font-medium text-sm">August Meeting.zip</p>
+                <p className="font-medium text-sm">Meeting.zip</p>
                 <p className="text-left text-xs text-gray-400 font-base">1.8 Mb</p>
               </div>
           </div>
@@ -397,7 +392,7 @@ const Messages = () => {
                 <MdOutlineSlowMotionVideo/>
               </div>
               <div className="flex flex-col">
-                <p className="font-medium text-sm">Company Vid.mp4</p>
+                <p className="font-medium text-sm">Ads.mp4</p>
                 <p className="text-left text-xs text-gray-400 font-base">1.8 Mb</p>
               </div>
             </div>

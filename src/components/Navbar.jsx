@@ -69,7 +69,7 @@ const Navbar = () => {
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       
         <MenuButton customFunc={handleActiveMenu} color={currentColor} icon={activeMenu ? <RiArrowLeftLine/> : <AiOutlineMenu />} />
-          <div className="flex flex-row rounded-full p-1 bg-gray-200 dark:bg-main-dark-bg items-center justify-between">
+          <div className="flex-row hidden sm:flex rounded-full p-1 bg-gray-200 dark:bg-main-dark-bg items-center justify-between">
             <div className="flex flex-row items-center gap-2 group relative">
               <svg width="20" height="20" fill="currentColor" className="ml-2 text-slate-400 pointer-events-none" aria-hidden="true">
                 <path fillRule="evenodd" clipRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
