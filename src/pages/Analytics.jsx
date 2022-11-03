@@ -66,14 +66,14 @@ const Analytics = () => {
                     </div>
                 <div>
                 {/* RECENT TRANSACTIONS */}
-                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl">
+                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:-mt-0 xl:-mt-3 rounded-2xl">
                     <div className="flex justify-between items-center gap-2">
                         <p className="text-base font-semibold">Transactions</p>
                         <DropDown currentMode={currentMode} />
                     </div>
                     <div className="mt-2 -pl-2 w-72 lg:w-56 xl:w-72">
                         {recentTransactions.map((item) => (
-                        <div key={item.title} className="flex justify-between mt-4">
+                        <div key={item.title} className="flex justify-between lg:mt-5 xl:mt-4">
                             <div className="flex gap-4">
                             <button
                                 type="button"
