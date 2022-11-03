@@ -476,11 +476,18 @@ export const links = [
     title: 'General',
     links: [
       {
-        name: 'ecommerce',
+        name: '',
+        id: 'ecommerce',
         icon: <FiShoppingBag />,
       },
       {
+        name: 'analytics',
+        id: 'analytics',
+        icon: <BsBarChart />,
+      },
+      {
         name: 'messages',
+        id: 'messages',
         icon: <BsChatDots />,
       },
     ],
@@ -491,14 +498,17 @@ export const links = [
     links: [
       {
         name: 'orders',
+        id: 'orders',
         icon: <AiOutlineShoppingCart />,
       },
       {
         name: 'employees',
+        id: 'employees',
         icon: <RiContactsFill />,
       },
       {
         name: 'customers',
+        id: 'customers',
         icon: <RiContactsLine />,
       },
     ],
@@ -508,18 +518,22 @@ export const links = [
     links: [
       {
         name: 'calendar',
+        id: 'calendar',
         icon: <AiOutlineCalendar />,
       },
       {
         name: 'tasks',
+        id: 'tasks',
         icon: <BsKanban />,
       },
       {
         name: 'notes',
+        id: 'notes',
         icon: <FiEdit />,
       },
       {
         name: 'settings',
+        id: 'settings',
         icon: <FiSettings />,
       },
     ],
@@ -745,16 +759,6 @@ export const recentTransactions = [
     iconBg: 'rgb(255, 244, 229)',
     pcColor: 'green-600',
   },
-  {
-    icon: <BsCurrencyDollar />,
-    amount: '-$50',
-    percentage: '+38%',
-    title: 'Refund',
-    desc: 'Payment Sent',
-    iconColor: '#03C9D7',
-    iconBg: '#E5FAFB',
-    pcColor: 'red-600',
-  },
 ];
 
 export const weeklyStats = [
@@ -770,14 +774,14 @@ export const weeklyStats = [
     icon: <FiStar />,
     amount: '-$560',
     title: 'Best Seller',
-    desc: 'MaterialPro Admin',
+    desc: 'FinchPro',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'text-red-600',
   },
   {
     icon: <BsChatLeft />,
     amount: '+$560',
-    title: 'Most Commented',
+    title: 'Most Liked',
     desc: 'Ample Admin',
     iconBg: '#00C292',
     pcColor: 'text-green-600',
@@ -3153,13 +3157,13 @@ export const lineCustomSeries = [
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
 
-  { dataSource: lineChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: 'England',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+  // { dataSource: lineChartData[1],
+  //   xName: 'x',
+  //   yName: 'y',
+  //   name: 'England',
+  //   width: '2',
+  //   marker: { visible: true, width: 10, height: 10 },
+  //   type: 'Line' },
 
   { dataSource: lineChartData[2],
     xName: 'x',
