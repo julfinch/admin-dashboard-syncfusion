@@ -325,17 +325,17 @@ export const colorMappingData = [
 ];
 
 export const rangeColorMapping = [
-  { label: '1°C to 10°C',
+  { label: 'Low',
     start: '1',
     end: '10',
     colors: colorMappingData[1] },
 
-  { label: '11°C to 20°C',
+  { label: 'Medium',
     start: '11',
     end: '20',
     colors: colorMappingData[2] },
 
-  { label: '21°C to 30°C',
+  { label: 'High',
     start: '21',
     end: '30',
     colors: colorMappingData[3] },
@@ -352,8 +352,8 @@ export const ColorMappingPrimaryYAxis = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
-  labelFormat: '{value}°C',
-  title: 'Temperature',
+  labelFormat: '${value}',
+  title: 'Demand',
 };
 
 export const FinancialPrimaryXAxis = {
@@ -3152,25 +3152,25 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Germany',
+    name: 'UK',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10,font: { fontWeight: '600', color: '#fff' } },
+    type: 'Line' },
+
+  { dataSource: lineChartData[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'USA',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
-
-  // { dataSource: lineChartData[1],
-  //   xName: 'x',
-  //   yName: 'y',
-  //   name: 'England',
-  //   width: '2',
-  //   marker: { visible: true, width: 10, height: 10 },
-  //   type: 'Line' },
 
   { dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
     name: 'India',
     width: '2',
-    marker: { visible: true, width: 10, height: 10 },
+    marker: { visible: true, width: 10, height: 10 ,},
     type: 'Line' },
 
 ];
